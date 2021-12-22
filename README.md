@@ -1,4 +1,8 @@
-<h1> Below Are JSON request and responses to create and read Department and Employee Entities</h5><br/>
+<h1> Below are JSON request and responses to create and read Department and Employee Entities</h5><br/>
+
+<h4>Note : </h4><p>mysql structure dump is added to project directory named: assignmentdb.sql
+restore it to any mysql latest version before testing.
+
 <h3>1- Create Department</h3></br>
 	<h5> Request Body</h5> </br>
 	
