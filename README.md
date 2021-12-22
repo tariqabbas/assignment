@@ -3,6 +3,10 @@
 <h4>Note : </h4><p>mysql structure dump is added to project directory named: assignmentdb.sql
 restore it to any mysql latest version before testing.
 
+swagger ui url would be:
+
+<a>	http://host:port/swagger-ui/index.html</a> 
+
 <h3>1- Create Department</h3></br>
 	<h5> Request Body</h5> </br>
 	
