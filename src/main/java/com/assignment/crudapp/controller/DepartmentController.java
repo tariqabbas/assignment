@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.assignment.crudapp.dto.DepartmentDto;
+import com.assignment.crudapp.dto.EmployeeDto;
 import com.assignment.crudapp.dto.PaginatedDto;
 import com.assignment.crudapp.entity.DepartmentEntity;
 import com.assignment.crudapp.service.DepartmentService;
@@ -86,7 +87,23 @@ public class DepartmentController {
 			Optional<List<DepartmentEntity>> depart = Optional.ofNullable(departmentService.findAll(pageable));
 			if (depart.isPresent()) {
 				departmentList = depart.get().stream().map(m -> {
-					return mapper.map(m, DepartmentDto.class);
+					DepartmentDto departmentDto = new DepartmentDto();
+					departmentDto.setDepartmentId(m.getDepartmentId());
+					departmentDto.setDepartmentName(m.getDepartmentName());
+					departmentDto.setManagerId(m.getManagerId());
+					departmentDto.setEmployees(m.getEmployees().stream().map(em -> {
+						EmployeeDto dto = new EmployeeDto();
+						dto.setEmployeeId(em.getEmployeeId());
+						dto.setFirstName(em.getFirstName());
+						dto.setLastName(em.getLastName());
+						dto.setHireDate(em.getHireDate());
+						dto.setSalary(em.getSalary());
+						dto.setEmail(em.getEmail());
+						dto.setManagerId(em.getManagerId());
+						dto.setPhoneNumber(em.getPhoneNumber());
+						return dto;
+					}).collect(Collectors.toList()));
+					return departmentDto;
 				}).collect(Collectors.toList());
 				responseEntity = new ResponseEntity<>(departmentList, HttpStatus.OK);
 			} else {
