@@ -6,7 +6,10 @@ restore it to any mysql latest version before testing.
 swagger ui url would be:
 
 <a>	http://host:port/swagger-ui/index.html</a> 
-
+ <p>Local machine Base URL forAPIs :<br/> 
+	 
+	http://localhost:8080/assignment
+	
 <h3>1- Create Department</h3></br>
 	<h5> Request Body</h5> </br>
 	
