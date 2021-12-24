@@ -9,7 +9,10 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-public class EmployeeDto implements Serializable{
+import lombok.Data;
+
+@Data
+public class EmployeeDto implements Serializable {
 
 	/**
 	 * 
@@ -35,85 +38,5 @@ public class EmployeeDto implements Serializable{
 	private Integer managerId;
 	private int departmentId;
 	private DepartmentDto departmentEntity;
-
-	public int getEmployeeId() {
-		return employeeId;
-	}
-
-	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-	public Date getHireDate() {
-		return hireDate;
-	}
-
-	public void setHireDate(Date hireDate) {
-		this.hireDate = hireDate;
-	}
-
-	public BigDecimal getSalary() {
-		return salary;
-	}
-
-	public void setSalary(BigDecimal salary) {
-		this.salary = salary;
-	}
-
-	public Integer getManagerId() {
-		return managerId;
-	}
-
-	public void setManagerId(Integer managerId) {
-		this.managerId = managerId;
-	}
-
-	public DepartmentDto getDepartmentEntity() {
-		return departmentEntity;
-	}
-
-	public void setDepartmentEntity(DepartmentDto departmentEntity) {
-		this.departmentEntity = departmentEntity;
-	}
-
-	public int getDepartmentId() {
-		return departmentId;
-	}
-
-	public void setDepartmentId(int departmentId) {
-		this.departmentId = departmentId;
-	}
 
 }
